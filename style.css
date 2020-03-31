@@ -1,0 +1,203 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	position: relative;
+	background-color: hsl(240, 78%, 98%);
+}
+
+body::before {
+	content: "";
+	background: url("images/bg-top.svg") no-repeat;
+	background-position: top right;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+body::after {
+	content: "";
+	background: url("images/bg-bottom.svg") no-repeat;
+	background-position: bottom left;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 10%;
+	z-index: -2;
+}
+/* utlity class */
+ul li {
+	list-style: none;
+}
+.btn {
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	color: hsl(240, 78%, 98%);
+	display: inline-block;
+	border-radius: 5px;
+	padding: 15px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+.btn-sec {
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	transition: background-color 0.5s ease-in-out;
+}
+.btn-pry {
+	background-color: hsl(240, 78%, 98%);
+	color: hsl(237, 63%, 64%);
+}
+
+.container {
+	max-width: 1050px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 70px 20px;
+}
+
+/* header */
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.header h1 {
+	color: hsl(233, 13%, 49%);
+}
+.header h3 {
+	color: hsl(234, 14%, 74%);
+	font-size: 1rem;
+}
+
+.toggler {
+	display: flex;
+	align-items: center;
+	margin: 70px 0;
+}
+#checkbox {
+	display: none;
+}
+label {
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	border-radius: 50px;
+	width: 80px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+	margin: 0 20px;
+}
+
+.ball {
+	background-color: hsl(240, 78%, 98%);
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	border-radius: 50%;
+	top: 2px;
+	left: 2px;
+	transition: transform 0.25s linear;
+}
+#checkbox:checked + label .ball {
+	transform: translateX(40px);
+}
+
+.cards {
+	display: flex;
+	align-items: center;
+}
+.card {
+	background-color: #fff;
+	padding: 40px 30px;
+	text-align: center;
+	width: 100%;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	min-height: 500px;
+	color: hsl(232, 13%, 33%);
+	font-weight: 700;
+}
+.card-1 {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.card-3 {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.card-pry {
+	padding: 80px 30px;
+	min-height: 600px;
+	border-radius: 10px;
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	color: hsl(240, 78%, 98%);
+	font-weight: 700;
+}
+.price {
+	margin: 40px 0;
+	display: flex;
+	flex-direction: column;
+}
+/* changing display */
+.price.monthly .monthly {
+	display: block;
+}
+.price.monthly .annual {
+	display: none;
+}
+.price .monthly {
+	display: none;
+}
+.price h2 {
+	font-size: 3rem;
+}
+.price span {
+	font-size: 4rem;
+}
+ul li {
+	padding: 20px 0;
+	width: 100%;
+	border-top: 1px solid hsl(234, 14%, 74%);
+}
+ul li:last-child {
+	border-bottom: 1px solid hsl(234, 14%, 74%);
+	margin-bottom: 30px;
+}
+
+/* activ state */
+label:hover {
+	background: hsl(234, 14%, 74%);
+}
+.btn-sec:hover {
+	background: #fff;
+	color: hsl(237, 63%, 64%);
+	border: 1px solid hsl(232, 13%, 33%);
+}
+.btn-pry:hover {
+	background-color: inherit;
+	color: hsl(240, 78%, 98%);
+	border: 1px solid hsl(240, 78%, 98%);
+}
+
+@media (max-width: 600px) {
+	.cards {
+		display: block;
+	}
+	.card {
+		border-radius: 10px;
+	}
+	.card-pry {
+		margin: 30px 0;
+	}
+	body::after {
+		display: none;
+	}
+}
